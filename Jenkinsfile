@@ -15,26 +15,22 @@ pipeline {
         }
         stage('Run Login Tests') {
             steps {
-                sh 'docker compose up -d \
-                    batchs/run_login.sh'
+                sh 'batchs/run_login.sh'
             }
         }
         stage('Run Menu Tests') {
             steps {
-                sh 'docker compose up -d \
-                    batchs/run_menu.sh'
+                sh 'batchs/run_menu.sh'
             }
         }
         stage('Run AddCandidate Tests') {
             steps {
-                sh 'docker compose up -d \
-                    batchs/run_add_candidate.sh'
+                sh 'batchs/run_add_candidate.sh'
             }
         }
         stage('Run Parcours TNR') {
             steps {
-                sh 'docker compose up -d \
-                    batchs/run_tnr.sh'
+                sh 'batchs/run_tnr.sh'
             }
         }
     }
