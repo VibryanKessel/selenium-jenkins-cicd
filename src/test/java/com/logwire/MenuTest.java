@@ -23,7 +23,8 @@ public class MenuTest {
     @BeforeEach
     public void setup() throws Exception {
         ChromeOptions options = new ChromeOptions();
-        driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+        String hubUrl = System.getProperty("selenium.hub.url", "http://selenium-hub:4444/wd/hub");
+        driver = new RemoteWebDriver(new URL(hubUrl), options);
 
         menu= new MenuPage(driver);
         dashboardPage = new DashboardPage();
