@@ -13,14 +13,19 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('Run AddCandidate Tests') {
+        stage('Run Login Tests') {
             steps {
-                sh 'batchs/run_add_candidate.sh'
+                sh 'batchs/run_login.sh'
             }
         }
         stage('Run Menu Tests') {
             steps {
                 sh 'batchs/run_menu.sh'
+            }
+        }
+        stage('Run AddCandidate Tests') {
+            steps {
+                sh 'batchs/run_add_candidate.sh'
             }
         }
         stage('Run Parcours TNR') {
