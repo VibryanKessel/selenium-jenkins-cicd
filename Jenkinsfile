@@ -3,9 +3,9 @@ pipeline {
         upstream 'build-and-deploy-to-integration'
     }
     agent {
-        docker {
-            image 'selenium/standalone-chrome:124.0'
-            args 'entrypoint='
+        dockerCompose {
+            yamlFile 'docker-compose.selenium-grid.yml'
+            service 'tests'
         }
     }
     stages {
