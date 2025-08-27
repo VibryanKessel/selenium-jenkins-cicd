@@ -25,7 +25,7 @@ public class AddCandidateTest {
     @BeforeEach
     public void setup() throws Exception {
         ChromeOptions options = new ChromeOptions();
-        String hubUrl = System.getProperty("selenium.hub.url", "http://selenium-hub:4444/wd/hub");
+        String hubUrl = System.getProperty("selenium.hub.url", "http://192.168.1.81:4444/wd/hub");
         driver = new RemoteWebDriver(new URL(hubUrl), options);
         
         menu = new MenuPage(driver);
