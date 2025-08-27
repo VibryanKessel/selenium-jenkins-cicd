@@ -3,9 +3,8 @@ pipeline {
         upstream 'build-and-deploy-to-integration'
     }
     agent {
-        dockerCompose {
-            yamlFile 'docker-compose.selenium-grid.yml'
-            service 'tests'
+        docker {
+            image 'maven:3.9.11-eclipse-temurin-24'
         }
     }
     stages {
