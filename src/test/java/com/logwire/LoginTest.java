@@ -8,7 +8,9 @@ import org.junit.jupiter.api.DisplayName;
     import org.junit.jupiter.api.Tag; 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.URL;
 
     @Tag("login")
 public class LoginTest {
@@ -19,10 +21,10 @@ public class LoginTest {
     private LoginPage loginPage;
 
     @BeforeEach
-    public void setup(){
-        driver = new ChromeDriver();
+    public void setup() throws Exception {
+        ChromeOptions options = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
         loginPage = new LoginPage(driver);
-        
         driver.get(loginPage.getUrl());
     }
 
