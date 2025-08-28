@@ -141,7 +141,7 @@ public void test6() throws InterruptedException{
         loginPage.fillPassword("");
         loginPage.clickLoginButton();
 
-        Thread.sleep(3000);
+        Thread.sleep(3000)
 
         assertEquals("Required", loginPage.getRequiredMsgText());
     }
